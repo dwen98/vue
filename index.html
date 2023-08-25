@@ -7,15 +7,26 @@
 </head>
 <body>
     <div id="app">
-        {{greeting}}
+        <p>
+            <input type="text" v-model="greeting">
+        </p>
+        <p>
+        {{greeting}} ({{greeting.length}})
+        </p>
     </div>
-    
+
     <script>
        Vue.createApp({
             data() {
                 return {
-                    greeting: 'Hi World!'
+                    greeting: 'Hi World LOL!'
                 };
+            },
+
+            mounted() {
+                setTimeout(() => {
+                    this.greeting ='LOLOLOLOLO';
+                }, 3000);
             }
        }).mount('#app');
     </script>
